@@ -1,0 +1,276 @@
+/* DeepSeek Markdown 渲染样式 - v2.0 (现代简洁风) */
+/* 适配聊天气泡，清爽紧凑 */
+
+/* ===== 基础全局样式 ===== */
+.deepseek-markdown {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    line-height: 1.6;
+    color: #374151;
+    font-size: 13px;
+    max-width: 80%;
+    overflow-x: auto;
+    padding: 1em 1em;
+    box-sizing: border-box;
+  }
+  
+  @media (max-width: 768px) {
+    .deepseek-markdown {
+      font-size: 12px;
+    }
+  }
+  
+  /* ===== 标题样式 ===== */
+  .deepseek-markdown h1 {
+    font-size: 1.3em;
+    font-weight: 700;
+    margin: 0.6em 0 0.3em;
+    color: #111827;
+    padding-bottom: 0.25em;
+    border-bottom: 1.5px solid #e5e7eb;
+  }
+  
+  .deepseek-markdown h2 {
+    font-size: 1.18em;
+    font-weight: 650;
+    margin: 0.55em 0 0.25em;
+    color: #1f2937;
+    padding-bottom: 0.2em;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  
+  .deepseek-markdown h3 {
+    font-size: 1.08em;
+    font-weight: 600;
+    margin: 0.45em 0 0.2em;
+    color: #1f2937;
+  }
+  
+  .deepseek-markdown h4 {
+    font-size: 1em;
+    font-weight: 600;
+    margin: 0.4em 0 0.15em;
+    color: #374151;
+  }
+  
+  .deepseek-markdown h5 {
+    font-size: 0.95em;
+    font-weight: 600;
+    margin: 0.35em 0 0.1em;
+    color: #4b5563;
+  }
+  
+  .deepseek-markdown h6 {
+    font-size: 0.9em;
+    font-weight: 500;
+    margin: 0.3em 0 0.1em;
+    color: #6b7280;
+  }
+  
+  /* ===== 段落与文本 ===== */
+  .deepseek-markdown p {
+    margin: 0.35em 0;
+    word-break: break-word;
+  }
+  
+  .deepseek-markdown strong {
+    font-weight: 600;
+    color: #111827;
+  }
+  
+  .deepseek-markdown em {
+    font-style: italic;
+    color: #6b21a8;
+  }
+  
+  .deepseek-markdown del {
+    text-decoration: line-through;
+    color: #9ca3af;
+  }
+  
+  .deepseek-markdown a {
+    color: #6366f1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.15s;
+  }
+  
+  .deepseek-markdown a:hover {
+    color: #4338ca;
+    text-decoration: underline;
+  }
+  
+  /* ===== 列表样式 ===== */
+  .deepseek-markdown ul,
+  .deepseek-markdown ol {
+    margin: 0.3em 0;
+    padding-left: 1.4em;
+  }
+  
+  .deepseek-markdown li {
+    margin: 0.12em 0;
+    padding-left: 0.15em;
+  }
+  
+  .deepseek-markdown ul li { list-style-type: disc; }
+  .deepseek-markdown ol li { list-style-type: decimal; }
+  
+  .deepseek-markdown li > ul,
+  .deepseek-markdown li > ol {
+    margin-top: 0.1em;
+    margin-bottom: 0.1em;
+  }
+  
+  .deepseek-markdown ul li ul li { list-style-type: circle; }
+  .deepseek-markdown ul li ul li ul li { list-style-type: square; }
+  
+  /* ===== 代码样式 ===== */
+  .deepseek-markdown code {
+    font-family: 'Menlo', 'Consolas', 'Monaco', 'Liberation Mono', monospace;
+    background-color: #f3f4f6;
+    padding: 0.15em 0.35em;
+    border-radius: 4px;
+    font-size: 0.88em;
+    color: #dc2626;
+  }
+  
+  .deepseek-markdown pre {
+    background-color: #1e1e2e;
+    border-radius: 8px;
+    padding: 0.7em 0.8em;
+    margin: 0.5em 0;
+    overflow-x: auto;
+    border: 1px solid #313244;
+  }
+  
+  .deepseek-markdown pre code {
+    background-color: transparent;
+    color: #cdd6f4;
+    padding: 0;
+    border: none;
+    font-size: 0.85em;
+    line-height: 1.5;
+    display: block;
+    overflow-x: auto;
+  }
+  
+  /* 语法高亮 (Catppuccin 风格) */
+  .deepseek-markdown .keyword { color: #cba6f7; }
+  .deepseek-markdown .function { color: #89b4fa; }
+  .deepseek-markdown .string { color: #a6e3a1; }
+  .deepseek-markdown .comment { color: #6c7086; }
+  .deepseek-markdown .number { color: #fab387; }
+  .deepseek-markdown .class { color: #f9e2af; }
+  
+  /* ===== 引用块样式 ===== */
+  .deepseek-markdown blockquote {
+    margin: 0.4em 0;
+    padding: 0.35em 0.7em;
+    background-color: #f9fafb;
+    border-left: 3px solid #a78bfa;
+    border-radius: 0 6px 6px 0;
+    color: #4b5563;
+  }
+  
+  .deepseek-markdown blockquote p {
+    margin: 0.15em 0;
+  }
+  
+  /* ===== 表格样式 ===== */
+  .deepseek-markdown table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.5em 0;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+  }
+  
+  .deepseek-markdown thead {
+    background-color: #f9fafb;
+  }
+  
+  .deepseek-markdown th {
+    padding: 0.35em 0.55em;
+    text-align: left;
+    font-weight: 600;
+    color: #374151;
+    border-bottom: 2px solid #e5e7eb;
+    font-size: 0.92em;
+  }
+  
+  .deepseek-markdown th:not(:last-child),
+  .deepseek-markdown td:not(:last-child) {
+    border-right: 1px solid #f3f4f6;
+  }
+  
+  .deepseek-markdown tbody tr {
+    border-bottom: 1px solid #f3f4f6;
+    transition: background-color 0.15s;
+  }
+  
+  .deepseek-markdown tbody tr:nth-child(even) {
+    background-color: #fafafa;
+  }
+  
+  .deepseek-markdown tbody tr:hover {
+    background-color: #f0f0ff;
+  }
+  
+  .deepseek-markdown td {
+    padding: 0.3em 0.55em;
+  }
+  
+  /* ===== 水平线 ===== */
+  .deepseek-markdown hr {
+    height: 0;
+    border: none;
+    border-top: 1px solid #e5e7eb;
+    margin: 0.7em 0;
+  }
+  
+  /* ===== 图片 ===== */
+  .deepseek-markdown img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin: 0.4em 0;
+  }
+  
+  /* ===== 任务列表 ===== */
+  .deepseek-markdown .task-list-item {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .deepseek-markdown input[type="checkbox"] {
+    margin-right: 0.4em;
+    accent-color: #6366f1;
+  }
+  
+  /* ===== 提示容器 ===== */
+  .deepseek-markdown .note {
+    background-color: #eff6ff;
+    border-left: 3px solid #60a5fa;
+    padding: 0.4em 0.6em;
+    margin: 0.4em 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.92em;
+  }
+  
+  .deepseek-markdown .warning {
+    background-color: #fffbeb;
+    border-left: 3px solid #fbbf24;
+    padding: 0.4em 0.6em;
+    margin: 0.4em 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.92em;
+  }
+  
+  .deepseek-markdown .tip {
+    background-color: #f0fdf4;
+    border-left: 3px solid #4ade80;
+    padding: 0.4em 0.6em;
+    margin: 0.4em 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.92em;
+  }

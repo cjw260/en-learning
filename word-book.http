@@ -1,0 +1,1 @@
+GET http://localhost:3000/api/v1/word-books?page=1&per_page=12&word=hello

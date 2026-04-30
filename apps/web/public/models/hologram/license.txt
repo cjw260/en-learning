@@ -1,0 +1,11 @@
+Model Information:
+* title:	Primary Ion Drive ///
+* source:	https://sketchfab.com/3d-models/primary-ion-drive-d3f50a66fee74c6588dd9bc92f7fe7b3
+* author:	indierocktopus (https://sketchfab.com/indierocktopus)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Primary Ion Drive ///" (https://sketchfab.com/3d-models/primary-ion-drive-d3f50a66fee74c6588dd9bc92f7fe7b3) by indierocktopus (https://sketchfab.com/indierocktopus) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
