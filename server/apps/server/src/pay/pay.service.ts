@@ -65,6 +65,7 @@ export class PayService {
             time_expire: dataTime.format('YYYY-MM-DD HH:mm:ss'), //订单过期时间
           },
           notify_url: `${this.configService.get<string>('ALIPAY_NOTIFY_URL')!}/api/v1/pay/notify`, //异步通知地址
+          return_url: `${this.configService.get<string>('ALIPAY_NOTIFY_URL')!}/courses/index`, //支付完成跳回
         });
       return {
         payUrl,
