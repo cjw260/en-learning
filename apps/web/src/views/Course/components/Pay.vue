@@ -30,6 +30,12 @@
                             <span class="text-sm text-zinc-600">支付金额</span>
                             <span class="text-xl font-bold text-indigo-600">¥{{ course.price }}</span>
                         </div>
+                        <!-- 沙箱测试账号 -->
+                        <div class="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-xs text-amber-800 space-y-1">
+                            <p class="font-medium">🧪 支付宝沙箱测试账号</p>
+                            <p>账号：rfkler1090@sandbox.com</p>
+                            <p>登录密码 & 支付密码：111111</p>
+                        </div>
                         <!-- 支付剩余时间倒计时（创建订单后显示） -->
                         <div v-if="timeExpire > 0"
                             class="flex flex-col items-center rounded-xl border border-amber-100 bg-amber-50/50 px-4 py-3">
