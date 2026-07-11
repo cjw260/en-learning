@@ -1,10 +1,24 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8">
     <link rel="icon" href="/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vite App</title>
+    <meta name="description" content="English Learning - 智能英语学习平台">
+    <title>English Learning - 智能英语学习</title>
+    <!-- 预连接外部资源 -->
+    <link rel="preconnect" href="http://101.96.211.198:9000" crossorigin>
+    <!-- 预加载首页 3D 模型（提升 LCP） -->
+    <link rel="modulepreload" href="/models/hologram/scene.gltf">
+    <!-- Speculation Rules：hover 链接时预渲染目标页面 -->
+    <script type="speculationrules">
+    {
+      "prerender": [{
+        "where": { "href_matches": "/*" },
+        "eagerness": "moderate"
+      }]
+    }
+    </script>
   </head>
   <body>
     <div id="app"></div>

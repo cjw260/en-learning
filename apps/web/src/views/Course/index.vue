@@ -18,6 +18,7 @@
                     class="group bg-white rounded-2xl overflow-hidden border border-zinc-100 shadow-sm hover:shadow-lg hover:shadow-indigo-500/5 hover:border-indigo-100 transition-all duration-300 flex flex-col">
                     <div class="relative aspect-4/3 bg-zinc-100 overflow-hidden">
                         <img :src="imageSrc(item.url)" :alt="item.name"
+                            loading="lazy" decoding="async"
                             class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" />
                         <div
                             class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-white/90 backdrop-blur text-xs font-medium text-zinc-600 shadow-sm">

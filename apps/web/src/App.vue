@@ -1,14 +1,18 @@
 <template>
-  <RouterView />
-  <Search />
-  <Login />
+  <el-config-provider :locale="zhCn">
+    <RouterView />
+    <Search />
+    <Login />
+  </el-config-provider>
 </template>
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
-import Search from '@/components/Search/index.vue'
-import Login from '@/components/Login/index.vue'
+import { defineAsyncComponent, provide, ref, watch } from 'vue'
+import zhCn from 'element-plus/es/locale/lang/zh-cn'
+// 懒加载 Login 和 Search（首屏不需要，按需加载）
+const Search = defineAsyncComponent(() => import('@/components/Search/index.vue'))
+const Login = defineAsyncComponent(() => import('@/components/Login/index.vue'))
 import { IS_SHOW_LOGIN } from '@/components/Login/type'
-import { provide,ref, watch } from 'vue'
 provide(IS_SHOW_LOGIN, ref(false))
 import { useUserStore } from './stores/user'
 import { useSocket } from './hooks/userSocket'

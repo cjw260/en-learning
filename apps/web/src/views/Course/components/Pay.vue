@@ -18,6 +18,7 @@
                         <div class="flex gap-4 rounded-xl bg-zinc-50/80 p-4">
                             <div class="w-20 h-20 shrink-0 rounded-lg overflow-hidden bg-zinc-200">
                                 <img :src="imageSrc(course.url)" :alt="course.name"
+                                    loading="lazy" decoding="async"
                                     class="w-full h-full object-cover" />
                             </div>
                             <div class="min-w-0 flex-1">

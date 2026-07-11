@@ -25,11 +25,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref,computed, onMounted, useTemplateRef } from 'vue'
-import * as THREE from 'three'
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'//模型加载器
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'//轨道控制器
+import { ref, computed, onMounted, useTemplateRef } from 'vue'
 import type { LoginType } from '@/components/Login/type'
+// Three.js 动态导入，只在组件挂载时加载（减少主包体积 ~500KB+）
 const canvasRef = useTemplateRef<HTMLCanvasElement>('canvasRef')
 const type = ref<LoginType>('login')
 const loginClass = computed(() => {
@@ -40,10 +38,6 @@ const registerClass = computed(() => {
 })
 const emits = defineEmits(['changeType'])
 
-const scene = new THREE.Scene()//创建场景
-let currentModel: THREE.Group | null = null//当前加载的模型
-let mixer: THREE.AnimationMixer | null = null//动画混合器
-const clock = new THREE.Timer()//时钟，用于动画更新
 const loadModel = (url: 'login' | 'register') => {
     if (currentModel) {
         scene.remove(currentModel)//如果已经有模型，先移除
@@ -66,7 +60,17 @@ const loadModel = (url: 'login' | 'register') => {
     emits('changeType', url)//向父组件发送事件，通知类型改变
 }
 
-const initThree = () => {
+const initThree = async () => {
+	    // 动态导入 Three.js（首次加载 login 弹窗时才下载）
+	    const [THREE_MODULE, GLTF_MODULE, CTRL_MODULE] = await Promise.all([
+	        import('three'),
+	        import('three/examples/jsm/loaders/GLTFLoader.js'),
+	        import('three/examples/jsm/controls/OrbitControls.js'),
+	    ])
+	    THREE = THREE_MODULE
+	    GLTFLoader = GLTF_MODULE.GLTFLoader
+	    OrbitControls = CTRL_MODULE.OrbitControls
+	    scene = new THREE.Scene()
     const width = canvasRef.value?.clientWidth//获取画布宽度
     const height = canvasRef.value?.clientHeight//获取画布高度
     const camera = new THREE.PerspectiveCamera(60, width! / height!, 0.1, 1000)//创建透视相机
