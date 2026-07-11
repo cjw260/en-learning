@@ -118,18 +118,8 @@ export default defineConfig({
         },
       },
     },
-    // Terser 压缩配置
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,   // 移除 console
-        drop_debugger: true,  // 移除 debugger
-        pure_funcs: ['console.log', 'console.warn'], // 移除特定函数
-      },
-      format: {
-        comments: false,      // 移除注释
-      },
-    },
+    // esbuild 压缩（比 Terser 快 10-100 倍，适合低配服务器构建）
+    minify: 'esbuild',
     // 启用 sourcemap（仅生产环境需要排查问题时开启）
     sourcemap: false,
   },
