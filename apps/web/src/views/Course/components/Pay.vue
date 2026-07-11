@@ -121,7 +121,7 @@ const onConfirm = async () => {
     const res  = await createPay(body);
     if(res.code === 200){
         isPay.value = true;//设置支付中
-        window.open(res.data.payUrl,'_blank')
+        window.location.href = res.data.payUrl
         timeExpire.value = res.data.timeExpire;
     }else{
         ElMessage.error(res.message);
