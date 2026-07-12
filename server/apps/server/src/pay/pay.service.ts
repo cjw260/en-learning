@@ -49,7 +49,7 @@ export class PayService {
         },
       });
       //支付宝sdk
-      const dataTime = dayjs().add(1, 'minute'); //当前时间加1分钟
+      const dataTime = dayjs().add(5, 'minute'); //当前时间加5分钟
       const payUrl = this.sharedPayService
         .getAlipaySdk()
         .pageExecute('alipay.trade.page.pay', 'GET', {
@@ -65,7 +65,7 @@ export class PayService {
             time_expire: dataTime.format('YYYY-MM-DD HH:mm:ss'), //订单过期时间
           },
           notify_url: `${this.configService.get<string>('ALIPAY_NOTIFY_URL')!}/api/v1/pay/notify`, //异步通知地址
-          return_url: `${this.configService.get<string>('ALIPAY_NOTIFY_URL')!}/courses/index`, //支付完成跳回
+          return_url: `${this.configService.get<string>('ALIPAY_NOTIFY_URL')!}/en/courses/index`, //支付完成跳回课程页
         });
       return {
         payUrl,
