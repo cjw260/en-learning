@@ -55,14 +55,14 @@ const loadModel = (url: 'login' | 'register') => {
     }
     const loader = new GLTFLoader()//创建模型加载器
     type.value = url
-    loader.load(`/models/${url}/scene.gltf`, (gltf) => {
+    loader.load(`/models/${url}/scene.gltf`, (gltf: any) => {
         currentModel = gltf.scene//保存当前加载的模型
         scene.add(currentModel)//将加载的模型添加到场景中
         scene.position.y = -0.8//调整模型位置
         gltf.scene.scale.set(0.8, 0.8, 0.8)//缩放模型
         if(gltf.animations && gltf.animations.length > 0) {
             mixer = new THREE.AnimationMixer(currentModel)//创建动画混合器
-            gltf.animations.forEach((clip) => {
+            gltf.animations.forEach((clip: any) => {
                 mixer!.clipAction(clip).play()//播放动画
             })
         }
