@@ -17,7 +17,7 @@ const initThree = async () => {
     // 创建场景
     const scene = new THREE.Scene();
     //动画混合器
-    let mixer: THREE.AnimationMixer | null = null;
+    let mixer: any = null;
     const clock = new THREE.Timer();//创建时钟
     // 创建相机
     const camera = new THREE.PerspectiveCamera(75, 500 / 250, 0.1, 1000);

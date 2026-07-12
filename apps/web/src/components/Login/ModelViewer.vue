@@ -38,6 +38,16 @@ const registerClass = computed(() => {
 })
 const emits = defineEmits(['changeType'])
 
+// Three.js 模块级变量（由 initThree 动态赋值）
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+let THREE: any = null
+let GLTFLoader: any = null
+let OrbitControls: any = null
+let scene: any = null
+let currentModel: any = null
+let mixer: any = null
+let clock: any = null
+
 const loadModel = (url: 'login' | 'register') => {
     if (currentModel) {
         scene.remove(currentModel)//如果已经有模型，先移除
