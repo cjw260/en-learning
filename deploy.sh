@@ -33,6 +33,7 @@ cd ../apps/web && pnpm build
 # 4. 重启服务
 echo ""
 echo "🔄 [4/4] 重启服务..."
+cd ../../server
 # 删除旧进程（路径可能有变更），用最新构建产物重新启动
 pm2 delete all 2>/dev/null || true
 pm2 start dist/apps/server/apps/server/src/main.js --name en-server -i max
