@@ -12,6 +12,8 @@ import { visualizer } from 'rollup-plugin-visualizer'
 
 // https://vite.dev/config/
 export default defineConfig({
+  // 部署在 /en/ 子路径下，导航页在 /
+  base: '/en/',
   server: {
     port: config.ports.web,
     proxy: {
